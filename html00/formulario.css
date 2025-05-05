@@ -8,17 +8,24 @@ body{
 
 h1 {
     text-align: center;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
 form {
-    background-color: white;
-    max-width: 300px;
+    background-color: rgb(255, 255, 255);
+    max-width: 400px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 15px 20px 10px;
+    border-radius: 5px;
+    box-shadow: 15px 20px 10px #9c8f97;
+}
+
+fieldset {
+    background-color: rgb(255, 255, 255);
+    display: block;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
 }
 label {
     background-color: white;
@@ -37,7 +44,7 @@ input[type="text"], input[type="password"] {
 input[type="button"] {
     width: 100%;
     padding: 10px;
-    background-color: #36acd3;
+    background-color: #fb9cd0;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -45,5 +52,5 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-    background-color: #36acd3;
+    background-color: #7fbace;
 }
