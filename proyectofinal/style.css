@@ -1,0 +1,794 @@
+/* Mis colores pastel favoritos. Los guardo aquí para no tener que repetirlos. */
+:root {
+    --color-rosa-pastel: #FFD1DC; 
+    --color-azul-pastel: #AEC6CF; 
+    --color-blanco: #FFFFFF;
+    --color-gris-claro: #F8F8F8; 
+    --color-gris-texto: #333333; 
+    --color-gris-oscuro: #555555;
+    --color-sombra-suave: rgba(0, 0, 0, 0.08); 
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para todo el cuerpo de la página. */
+body {
+    font-family: 'Lato', sans-serif; /* fuente principal */
+    line-height: 1.6; /* Un espacio entre las líneas de texto */
+    color: var(--color-gris-texto);
+    background-color: var(--color-gris-claro);
+    display: flex; /* Para que el footer se quede abajo */
+    flex-direction: column;
+    min-height: 100vh; /* La altura mínima de la pantalla */
+}
+
+/* Cómo quiero que se vean mis enlaces. */
+a {
+    color: var(--color-azul-pastel);
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+
+/* Cuando paso el mouse o uso TAB en un enlace, cambia de color y aparece un borde */
+a:hover,
+a:focus {
+    color: var(--color-rosa-pastel);
+    outline: 2px solid var(--color-rosa-pastel); /* El borde para accesibilidad con TAB */
+    outline-offset: 2px;
+    border-radius: 3px; /* Bordes suaves para ese borde */
+}
+
+/* Estilos generales para mis botones. */
+.button {
+    display: inline-block; /* Para que pueda ponerle margen y padding */
+    background-color: var(--color-rosa-pastel);
+    color: var(--color-blanco);
+    padding: 12px 25px;
+    border-radius: 30px; /* Botones redonditos */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    font-weight: bold;
+    letter-spacing: 1px; /* Un poco de espacio entre letras */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Efectos suaves */
+    border: none; /* Quitar el borde por defecto del botón */
+    cursor: pointer; /* Que el cursor se vuelva una manita */
+}
+
+/* Cuando el mouse pasa por el botón o lo selecciono con TAB. */
+.button:hover,
+.button:focus {
+    background-color: var(--color-azul-pastel);
+    transform: translateY(-2px); /* El botón se "levanta" un poquito */
+    box-shadow: 0 4px 10px var(--color-sombra-suave); /* Una sombra más notoria */
+    outline: 2px solid var(--color-azul-pastel); /* Para el foco de TAB */
+    outline-offset: 2px;
+}
+
+/* 'main' ocupa todo el espacio que sobra, así el footer siempre queda abajo. */
+main {
+    flex: 1;
+}
+
+/* HEADER - La parte de arriba de la página. */
+header {
+    background-color: var(--color-rosa-pastel);
+    color: var(--color-blanco);
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px var(--color-sombra-suave);
+}
+
+.header-content {
+    max-width: 1200px; /* Para que no sea demasiado ancho en pantallas grandes */
+    margin: 0 auto; /* Centrarlo */
+    display: flex; /* Para poner el título y la navegación uno al lado del otro */
+    justify-content: space-between; /* Espaciar el título y la navegación */
+    align-items: center; /* Alinearlos al centro verticalmente */
+    flex-wrap: wrap; /* Para que en móviles se pongan uno debajo del otro */
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 0;
+}
+
+header h1 a {
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+header h1 a:hover,
+header h1 a:focus {
+    color: var(--color-azul-pastel);
+    outline: none; /* El estilo general de 'a' ya lo maneja bien aquí */
+}
+
+/* NAVEGACIÓN - Los enlaces del menú. */
+nav ul {
+    list-style: none; /* Quitar los puntos de la lista */
+    display: flex; /* Para que los elementos se pongan en fila */
+    gap: 25px; /* Espacio entre cada enlace */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--color-blanco);
+    font-size: 1.1em;
+    font-weight: 400;
+    padding: 5px 0;
+    position: relative; /* Para el subrayado animado */
+}
+
+/* El subrayado que aparece al pasar el mouse por los enlaces de la navegación. */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-azul-pastel);
+    transition: width 0.3s ease; /* Animación de ancho */
+}
+
+nav a:hover::after,
+nav a:focus::after {
+    width: 100%; /* El subrayado aparece completo */
+}
+
+/* SECCIONES PRINCIPALES - Estilos generales. */
+section {
+    padding: 50px 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Para que las secciones no sean demasiado anchas */
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    color: var(--color-rosa-pastel);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* El subrayado de los títulos h2. No quiero que todos lo tengan, solo los principales. */
+/* Uso ':not(.sidebar)' para que no se aplique a los h2 dentro del sidebar. */
+section:not(.sidebar) > h2::after,
+.page-intro > h1::after { /* También se lo pongo al h1 de la introducción de recetas */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Para centrarlo */
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-azul-pastel);
+    border-radius: 5px;
+}
+
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    color: var(--color-azul-pastel);
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 1em;
+    line-height: 1.7; /* Para que los párrafos se lean fácil */
+}
+
+blockquote {
+    background-color: var(--color-blanco);
+    border-left: 5px solid var(--color-azul-pastel); /* Una línea de color a la izquierda */
+    padding: 20px;
+    margin: 30px auto;
+    font-style: italic;
+    color: var(--color-gris-oscuro);
+    max-width: 800px;
+    box-shadow: 0 2px 5px var(--color-sombra-suave);
+    border-radius: 8px;
+}
+
+blockquote footer {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: var(--color-gris-texto);
+}
+
+/* SECCIÓN INICIO (inicio.html) */
+.hero {
+    position: relative;
+    text-align: center;
+    color: var(--color-blanco);
+    overflow: hidden;
+    padding: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover; /* Para que la imagen cubra todo el espacio sin deformarse */
+    display: block;
+    filter: brightness(0.7); /* Oscurecer un poco la imagen para que el texto resalte */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Para centrar el texto perfectamente */
+    z-index: 1;
+    max-width: 80%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para que el texto se vea mejor */
+}
+
+.hero-text h2 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: var(--color-blanco); /* El título en blanco para que contraste */
+}
+.hero-text h2::after { /* No quiero subrayado aquí */
+    content: none;
+}
+
+.hero-text p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+/* RECETAS DESTACADAS (inicio.html) */
+.featured-recipes {
+    background-color: var(--color-blanco);
+    padding: 60px 20px;
+}
+
+.recipe-cards-container {
+    display: grid; /* Grid para organizar las tarjetas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Se adaptan solas */
+    gap: 30px; /* Espacio entre las tarjetas */
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.tarjeta-receta {
+    background-color: var(--color-gris-claro);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--color-sombra-suave);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efectos al pasar el mouse */
+}
+
+.tarjeta-receta:hover {
+    transform: translateY(-5px); /* Se levanta un poco */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra más grande */
+}
+
+.tarjeta-receta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.tarjeta-receta h3 {
+    margin: 20px 0 10px;
+    font-size: 1.5em;
+    color: var(--color-azul-pastel);
+}
+
+.tarjeta-receta .button {
+    margin-bottom: 20px;
+}
+
+/* ACERCA DE MÍ (inicio.html) */
+.about-us-preview {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* PÁGINA DE RECETAS (recetas.html) */
+.recetas-page-main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-intro {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.page-intro h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    color: var(--color-rosa-pastel);
+    margin-bottom: 20px;
+}
+
+.page-intro h1::after { /* El subrayado que quiero para el h1 de la introducción */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-azul-pastel);
+    border-radius: 5px;
+}
+
+
+.page-intro p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.content-wrapper {
+    display: flex; /* Para poner el sidebar y la tabla uno al lado del otro */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.sidebar {
+    flex: 0 0 280px; /* Le doy un ancho fijo a la barra lateral */
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--color-sombra-suave);
+}
+
+.sidebar h2 {
+    font-size: 1.8em;
+    color: var(--color-azul-pastel);
+    margin-bottom: 25px;
+    text-align: left; /* Este h2 no va centrado */
+    padding-bottom: 5px;
+}
+.sidebar h2::after { /* No quiero subrayado aquí */
+    content: none;
+}
+
+.sidebar form fieldset {
+    border: 1px solid var(--color-azul-pastel);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.sidebar form legend {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--color-gris-oscuro);
+    padding: 0 10px;
+}
+
+.sidebar form label {
+    display: inline-block;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    color: var(--color-gris-texto);
+    cursor: pointer;
+}
+
+.sidebar form input[type="radio"],
+.sidebar form input[type="checkbox"] {
+    margin-right: 5px;
+    accent-color: var(--color-rosa-pastel); /* Color del radio/checkbox al marcar */
+}
+
+.sidebar form input[type="range"] {
+    width: calc(100% - 10px);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid var(--color-azul-pastel);
+    border-radius: 5px;
+    font-size: 1em;
+    background: var(--color-gris-claro);
+    height: 8px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    border: none; /* También quito el borde del range */
+}
+/* Estilo para el "pulgar" del slider (el circulito que se mueve) */
+.sidebar form input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-rosa-pastel);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.sidebar form input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-rosa-pastel);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#tiempo-max-value {
+    font-weight: bold;
+    color: var(--color-rosa-pastel);
+}
+
+.sidebar .button {
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.all-recipes-list {
+    flex: 1; /* Para que la lista ocupe el resto del espacio */
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--color-sombra-suave);
+}
+
+.all-recipes-list h2 {
+    text-align: left;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.all-recipes-list h2::after { /* No quiero subrayado aquí */
+    content: none;
+}
+
+.table-container {
+    overflow-x: auto; /* Para que la tabla tenga scroll horizontal en móviles si es muy ancha */
+    margin-top: 20px;
+}
+
+#tabla-recetas {
+    width: 100%;
+    border-collapse: collapse; /* Para que los bordes de las celdas se unan */
+    margin-top: 20px;
+}
+
+#tabla-recetas th,
+#tabla-recetas td {
+    border: 1px solid var(--color-azul-pastel);
+    padding: 12px;
+    text-align: left;
+}
+
+#tabla-recetas th {
+    background-color: var(--color-rosa-pastel);
+    color: var(--color-blanco);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+#tabla-recetas tbody tr:nth-child(even) { /* Para que las filas pares tengan un color diferente */
+    background-color: var(--color-gris-claro);
+}
+
+#tabla-recetas tbody tr:hover { /* Cuando pasas el mouse por una fila de la tabla */
+    background-color: var(--color-azul-pastel);
+    color: var(--color-blanco);
+    cursor: pointer;
+}
+#tabla-recetas tbody tr:hover td { /* También el texto dentro de la fila */
+    color: var(--color-blanco);
+}
+
+
+/* PÁGINA ACERCA DE MÍ (acerca-de.html) */
+.about-page-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.about-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    color: var(--color-rosa-pastel);
+    text-align: center;
+    margin-bottom: 40px;
+}
+.about-content h1::after { /* Subrayado para el h1 de "Acerca de Mí" */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-azul-pastel);
+    border-radius: 5px;
+}
+
+
+.about-content article {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--color-sombra-suave);
+    margin-bottom: 30px;
+}
+
+.about-content article h2 {
+    text-align: left;
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: var(--color-azul-pastel);
+}
+.about-content article h2::after { /* No quiero subrayado aquí */
+    content: none;
+}
+
+.contact-info {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--color-sombra-suave);
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-info h2 {
+    font-size: 2em;
+    color: var(--color-azul-pastel);
+    margin-bottom: 20px;
+}
+.contact-info h2::after { /* No quiero subrayado aquí */
+    content: none;
+}
+.contact-info p {
+    margin-bottom: 10px;
+}
+.contact-info a {
+    font-weight: bold;
+}
+
+
+.contact-form-section {
+    background-color: var(--color-blanco);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--color-sombra-suave);
+    margin-top: 40px;
+}
+
+.contact-form-section h2 {
+    margin-bottom: 30px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-gris-oscuro);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-azul-pastel);
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: var(--color-gris-claro);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-rosa-pastel);
+    box-shadow: 0 0 0 3px rgba(255, 209, 220, 0.5); /* Sombra suave para el foco */
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Se puede cambiar de tamaño verticalmente */
+}
+
+.contact-form .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.contact-form .checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Hacer el checkbox un poco más grande */
+    accent-color: var(--color-rosa-pastel);
+}
+
+.contact-form .checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.contact-form .button {
+    width: auto;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    display: block;
+    margin: 0 auto; /* Centrar el botón */
+}
+
+
+/* FOOTER - El pie de página. */
+footer {
+    background-color: var(--color-azul-pastel);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+footer nav ul {
+    justify-content: center; /* Centrar los enlaces del footer */
+    gap: 15px;
+}
+
+footer nav a {
+    color: var(--color-blanco);
+    font-size: 0.9em;
+}
+
+footer nav a:hover,
+footer nav a:focus {
+    color: var(--color-rosa-pastel);
+}
+
+
+/* Para que se vea bien en celulares y tablets */
+
+/* Cuando la pantalla es de 768px o menos (Tabletas y móviles grandes) */
+@media screen and (max-width: 768px) {
+    header .header-content {
+        flex-direction: column; /* La cabecera se pone en columna */
+        align-items: center;
+        text-align: center;
+    }
+
+    header h1 {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Los enlaces del menú se ponen uno debajo del otro */
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero-image {
+        height: 400px; /* La imagen del héroe es un poco más pequeña */
+    }
+
+    .hero-text h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    /* Ajustes para la página de recetas */
+    .content-wrapper {
+        flex-direction: column; /* El sidebar y la tabla se ponen uno debajo del otro */
+    }
+
+    .sidebar {
+        flex: auto; /* Ocupa todo el ancho disponible */
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .all-recipes-list {
+        width: 100%;
+    }
+
+    #tabla-recetas th,
+    #tabla-recetas td {
+        padding: 8px; /* Un poco menos de espacio en las celdas */
+        font-size: 0.9em;
+    }
+
+    .contact-form-section {
+        padding: 30px;
+    }
+}
+
+/* Cuando la pantalla es de 480px o menos (Teléfonos móviles pequeños) */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav a {
+        font-size: 1em;
+        padding: 3px 0;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .hero-text h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-text p {
+        font-size: 0.9em;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .recipe-cards-container {
+        grid-template-columns: 1fr; /* Una sola columna para las tarjetas */
+    }
+
+    .tarjeta-receta h3 {
+        font-size: 1.3em;
+    }
+
+    .sidebar,
+    .all-recipes-list,
+    .about-content article,
+    .contact-info,
+    .contact-form-section {
+        padding: 20px;
+    }
+    .about-content article h2 {
+        font-size: 1.5em;
+    }
+    .contact-form-section h2 {
+        font-size: 1.8em;
+    }
+}

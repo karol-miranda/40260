@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../yM.js", "../xM.js", "../xyzM.js"],
+  "sourcesContent": ["function y(param){\r\n    console.log(\"y:\" +param)\r\n    return \"fin y\"\r\n}\r\n\r\nexport{y}", "import {y} from \"./yM.js\"\r\n\r\nfunction x(param) {\r\n    y(\"x\")\r\n    console.log(\"x: \" +param)\r\n    return\"fin x\"\r\n}\r\n\r\nfunction xx(param){\r\n    return \"fin xx\"\r\n}\r\n\r\nexport {x,xx}", "import * as miModulo from \"./xM.js\"\r\n\r\ndocument.getElementById(\"app\")\r\nconsole.log(miModulo.x(\"abc\"))\r\nconsole.log(miModulo.xx(\"def\"))"],
+  "mappings": "MAAA,SAASA,EAAEC,EAAM,CACb,eAAQ,IAAI,KAAMA,CAAK,EAChB,OACX,CCDA,SAASC,EAAEC,EAAO,CACd,OAAAC,EAAE,GAAG,EACL,QAAQ,IAAI,MAAOD,CAAK,EAClB,OACV,CAEA,SAASE,EAAGF,EAAM,CACd,MAAO,QACX,CCRA,SAAS,eAAe,KAAK,EAC7B,QAAQ,IAAaG,EAAE,KAAK,CAAC,EAC7B,QAAQ,IAAaC,EAAG,KAAK,CAAC",
+  "names": ["y", "param", "x", "param", "y", "xx", "x", "xx"]
+}

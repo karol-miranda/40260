@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestras Recetas - ¡Muchos Postres Aquí!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="inicio.html">Dulces Delicias Pastel</a></h1>
+            <nav aria-label="Navegación principal del sitio">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a href="acerca-de.html">Acerca de Mí y Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="recetas-page-main">
+        <section class="page-intro">
+            <h1>Explora Todas Mis Recetas</h1>
+            <p>Aquí vas a encontrar un montón de postres. </p>
+        </section>
+
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <h2>Filtrar Recetas</h2>
+                <form aria-label="Formulario para filtrar las recetas">
+                    <fieldset>
+                        <legend>Elige una Categoría:</legend>
+                        <input type="radio" id="pasteles" name="categoria" value="pasteles">
+                        <label for="pasteles">Pasteles</label><br>
+                        <input type="radio" id="galletas" name="categoria" value="galletas">
+                        <label for="galletas">Galletas</label><br>
+                        <input type="radio" id="frios" name="categoria" value="frios">
+                        <label for="frios">Postres Fríos</label><br>
+                        <input type="radio" id="todos" name="categoria" value="todos" checked>
+                        <label for="todos">Ver Todas las Recetas</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Tiempo máximo de preparación (minutos):</legend>
+                        <label for="tiempo-max">Cuánto tiempo quieres invertir:</label>
+                        <input type="range" id="tiempo-max" name="tiempo-max" min="5" max="120" value="60"
+                               aria-valuemin="5" aria-valuemax="120" aria-valuenow="60"
+                               aria-label="Selecciona el tiempo máximo de preparación en minutos">
+                        <span id="tiempo-max-value" aria-live="polite">60</span> min
+                    </fieldset>
+
+                    <button type="reset" class="button" aria-label="Restablecer todos los filtros de recetas a su estado original">Limpiar Filtros</button>
+                </form>
+            </aside>
+
+            <section class="all-recipes-list">
+                <h2>Lista Completa de Recetas</h2>
+                <p>Aquí verás todas las recetas que tengo</p>
+                <div class="table-container">
+                    <table id="tabla-recetas">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Postre</th>
+                                <th>Descripción Breve</th>
+                                <th>Tiempo de Preparación</th>
+                                <th>Ingredientes Clave</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-recetas-body">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dulces Delicias Pastel. Todos los derechos reservados </p>
+        <nav aria-label="Enlaces de pie de página">
+            <ul>
+                <li><a href="#top">Volver Arriba</a></li>
+                <li><a href="acerca-de.html">Política de Privacidad</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="recetas.js"></script>
+    <script>
+        // Este JavaScript es solo para la página de recetas.
+        // Aquí actualizo el número que aparece al lado del slider de tiempo.
+        document.getElementById('tiempo-max').addEventListener('input', function() {
+            document.getElementById('tiempo-max-value').textContent = this.value;
+            // ¡Importante para accesibilidad! Le digo a los lectores de pantalla el valor actual.
+            this.setAttribute('aria-valuenow', this.value);
+            console.log("Tiempo máximo seleccionado: " + this.value + " minutos."); // Para ver qué valor tiene.
+        });
+
+        // Cuando la página está lista, ¡cargo las recetas desde mi archivo XML!
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Página de recetas lista. Voy a cargar los datos del XML.");
+            cargarRecetasDesdeXML();
+        });
+    </script>
+</body>
+</html>

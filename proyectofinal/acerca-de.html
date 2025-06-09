@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Mí y Contacto - Dulces Delicias Pastel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="inicio.html">Dulces Delicias Pastel</a></h1>
+            <nav aria-label="Navegación principal del sitio">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a href="acerca-de.html">Acerca de Mí y Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="about-page-main">
+        <section class="about-content">
+            <h1>Conoce Más Sobre Dulces Delicias Pastel</h1>
+            <article>
+                <h2>Mi Historia</h2>
+                <p>Desde mi primer pastel quemado hasta ahora, mi meta es que la repostería sea fácil y accesible para todos auqellos que buscan aprender.</p>
+            </article>
+
+            <article>
+                <h2>Mi Misión Dulce</h2>
+                <p>Quiero compartir las recetas que mejor me han funcionado para que todos puedan disfrutar de ellas <3</p>
+            </article>
+
+            <aside class="contact-info">
+                <h2>¿Tienes Preguntas o Ideas?</h2>
+                <p>Si quieres preguntarme algo, darme una sugerencia de receta, este es el lugar</p>
+                <p><strong>Correo electrónico:</strong> <a href="mailto:idulcesdeliciaspastel@gmail.com">idulcesdeliciaspastel@gmail.com"</a></p>
+                <p><strong>Teléfono:</strong> +52 228 406 3991 (No me llenen de mensajes pls)</p>
+            </aside>
+        </section>
+
+        <section class="contact-form-section">
+            <h2>Mándame un Mensaje Aquí</h2>
+            <form aria-label="Formulario de contacto para enviar un mensaje" class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Tu Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Tu Nombre Aquí" required aria-required="true">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Tu Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="Ej: tu.email@ejemplo.com" required aria-required="true">
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto (¿De qué se trata tu mensaje?):</label>
+                    <input type="text" id="asunto" name="asunto" placeholder="Ej: Sugerencia de receta / Pregunta" required aria-required="true">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Tu Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="7" placeholder="Escribe tu mensaje aquí..." required aria-required="true"></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter" value="si">
+                    <label for="newsletter">Sí, quiero recibir las últimas recetas en mi correo. Graciasss</label>
+                </div>
+
+                <button type="submit" class="button" aria-label="Enviar el mensaje de contacto">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dulces Delicias Pastel. Todos los derechos reservados </p>
+        <nav aria-label="Enlaces de pie de página">
+            <ul>
+                <li><a href="#top">Volver Arriba</a></li>
+                <li><a href="acerca-de.html">Política de Privacidad</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

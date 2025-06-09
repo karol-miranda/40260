@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recetas>
+    <postre id="pastel-chocolate">
+        <nombre>Pastel de Chocolate Clásico</nombre>
+        <descripcion>Un pastel húmedo y delicioso, ideal para cualquier celebración.</descripcion>
+        <tiempo>60 minutos</tiempo>
+        <ingredientes>
+            <ingrediente>2 tazas de harina</ingrediente>
+            <ingrediente>1 taza de cacao en polvo</ingrediente>
+            <ingrediente>2 tazas de azúcar</ingrediente>
+            <ingrediente>1 cucharadita de polvo para hornear</ingrediente>
+            <ingrediente>1 cucharadita de bicarbonato de sodio</ingrediente>
+            <ingrediente>1 cucharadita de sal</ingrediente>
+            <ingrediente>1 taza de leche</ingrediente>
+            <ingrediente>1/2 taza de aceite vegetal</ingrediente>
+            <ingrediente>2 huevos grandes</ingrediente>
+            <ingrediente>2 cucharaditas de extracto de vainilla</ingrediente>
+            <ingrediente>1 taza de agua hirviendo</ingrediente>
+        </ingredientes>
+        <preparacion>
+            <paso>Precalentar el horno a 180°C (350°F). Engrasar y enharinar dos moldes redondos de 20 cm.</paso>
+            <paso>En un tazón grande, mezclar la harina, el cacao, el azúcar, el polvo para hornear, el bicarbonato y la sal.</paso>
+            <paso>En otro tazón, batir la leche, el aceite, los huevos y la vainilla.</paso>
+            <paso>Agregar los ingredientes húmedos a los secos y mezclar hasta que se combinen.</paso>
+            <paso>Incorporar el agua hirviendo, mezclando hasta que la masa sea homogénea. Estará líquida.</paso>
+            <paso>Dividir la masa entre los moldes y hornear de 30 a 35 minutos, o hasta que un palillo insertado en el centro salga limpio.</paso>
+            <paso>Dejar enfriar en los moldes por 10 minutos antes de desmoldar y transferir a una rejilla para enfriar completamente.</paso>
+        </preparacion>
+    </postre>
+
+    <postre id="galletas-mantequilla">
+        <nombre>Galletas de Mantequilla Perfectas</nombre>
+        <descripcion>Crujientes por fuera, suaves por dentro. Ideales para decorar.</descripcion>
+        <tiempo>45 minutos</tiempo>
+        <ingredientes>
+            <ingrediente>1 taza de mantequilla sin sal, ablandada</ingrediente>
+            <ingrediente>1 taza de azúcar granulada</ingrediente>
+            <ingrediente>1 huevo grande</ingrediente>
+            <ingrediente>1 cucharadita de extracto de vainilla</ingrediente>
+            <ingrediente>3 tazas de harina para todo uso</ingrediente>
+            <ingrediente>1/2 cucharadita de sal</ingrediente>
+        </ingredientes>
+        <preparacion>
+            <paso>En un tazón grande, batir la mantequilla y el azúcar hasta que estén suaves y esponjosos.</paso>
+            <paso>Incorporar el huevo y el extracto de vainilla.</paso>
+            <paso>En un tazón separado, mezclar la harina y la sal. Poco a poco, agregar los ingredientes secos a los húmedos, mezclando hasta que se forme una masa.</paso>
+            <paso>Dividir la masa por la mitad, envolverla en plástico y refrigerar durante al menos 30 minutos.</paso>
+            <paso>Precalentar el horno a 190°C (375°F). En una superficie ligeramente enharinada, extender la masa hasta un grosor de aproximadamente 0.5 cm.</paso>
+            <paso>Cortar las galletas con cortadores de galletas y colocarlas en bandejas para hornear sin engrasar.</paso>
+            <paso>Hornear de 8 a 10 minutos, o hasta que los bordes estén ligeramente dorados. Dejar enfriar en las bandejas por unos minutos antes de transferir a una rejilla para enfriar completamente.</paso>
+        </preparacion>
+    </postre>
+
+    <postre id="cheesecake">
+        <nombre>Cheesecake de Frutos Rojos sin Horno</nombre>
+        <descripcion>Un postre frío y cremoso, perfecto para el verano.</descripcion>
+        <tiempo>30 minutos (más tiempo de refrigeración)</tiempo>
+        <ingredientes>
+            <ingrediente>200g de galletas Graham (o tipo María)</ingrediente>
+            <ingrediente>100g de mantequilla sin sal, derretida</ingrediente>
+            <ingrediente>500g de queso crema, a temperatura ambiente</ingrediente>
+            <ingrediente>1 taza de azúcar glass</ingrediente>
+            <ingrediente>1 cucharadita de extracto de vainilla</ingrediente>
+            <ingrediente>400ml de nata para montar (crema de leche para batir), fría</ingrediente>
+            <ingrediente>2 tazas de frutos rojos frescos (fresas, arándanos, frambuesas)</ingrediente>
+            <ingrediente>2 cucharadas de mermelada de frutos rojos (opcional, para el topping)</ingrediente>
+        </ingredientes>
+        <preparacion>
+            <paso>Triturar las galletas hasta obtener migas finas. Mezclar con la mantequilla derretida.</paso>
+            <paso>Presionar la mezcla de galletas en el fondo de un molde desmontable de 20-22 cm. Refrigerar por 15 minutos.</paso>
+            <paso>En un tazón grande, batir el queso crema, el azúcar glass y la vainilla hasta que esté suave y sin grumos.</paso>
+            <paso>En otro tazón, montar la nata hasta que forme picos suaves.</paso>
+            <paso>Incorporar suavemente la nata montada a la mezcla de queso crema hasta que esté combinado.</paso>
+            <paso>Verter la mezcla de queso crema sobre la base de galletas en el molde y extender de manera uniforme.</paso>
+            <paso>Refrigerar por al menos 4 horas, o idealmente toda la noche, hasta que esté firme.</paso>
+            <paso>Antes de servir, decorar con frutos rojos frescos. Si lo deseas, calentar ligeramente la mermelada y verterla por encima.</paso>
+        </preparacion>
+    </postre>
+</recetas>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulces Delicias Pastel - Mi Primera Web Bonita</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="inicio.html">Dulces Delicias Pastel</a></h1>
+            
+            <nav aria-label="Navegación principal del sitio">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="recetas.html">Recetas</a></li>
+                    <li><a href="acerca-de.html">Acerca de Mí y Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" role="banner">
+            <img src="imagenes/postre1.jpg" alt="Un postre pastel con frutas frescas y crema batida, sobre un fondo suave y pastel." class="hero-image">
+            <div class="hero-text">
+                <h2>Bienvenidos a un mundo de sabor</h2>
+                <p>Aquí te mostraré recetas súper ricas y fáciles de postres <3</p>
+                <a href="recetas.html" class="button" aria-label="Explorar todas las recetas de postres, haz clic aquí para verlas.">Explorar Recetas</a>
+            </div>
+        </section>
+
+        <section class="featured-recipes">
+            <h2>Postres Destacados para Ti</h2>
+            <div class="recipe-cards-container" id="featured-recipes-container">
+                </div>
+        </section>
+
+        <section class="about-us-preview">
+            <h2>Mi Pasión por los Postres</h2>
+            <p>Quiero que todos conozcan estas recetas pq están riquísimas</p>
+            <blockquote cite="https://www.ejemplo.com/cita-dulce-inspiradora">
+                <p>"La vida es incierta. Come postre primero."</p>
+                <footer>— Ernestine Ulmer</footer>
+            </blockquote>
+            <a href="acerca-de.html" class="button" aria-label="Conoce más sobre Dulces Delicias Pastel y quién soy.">Conoce Más</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dulces Delicias Pastel. Todos los derechos reservados (Es mi primer proyecto lol)</p>
+        <nav aria-label="Enlaces de pie de página">
+            <ul>
+                <li><a href="#top">Volver Arriba</a></li>
+                <li><a href="acerca-de.html">Política de Privacidad (aunque ni tengo una)</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="recetas.js"></script>
+    <script>
+        // Esta es una pequeña parte de JavaScript que solo corre en esta página.
+        // Esperamos a que la página se cargue bien antes de intentar poner cosas.
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("La página de inicio está lista para mostrar postres destacados"); // Para ver si funciona en la consola del navegador.
+
+            const featuredContainer = document.getElementById('featured-recipes-container');
+            // Defino los datos de mis postres destacados aquí.
+            const featuredRecipesData = [
+                { nombre: 'Pastel de Chocolate Clásico', imagenSrc: 'imagenes/pastel-chocolate.jpg', enlace: 'recetas.html#pastel-chocolate' },
+                { nombre: 'Galletas de Mantequilla Divertidas', imagenSrc: 'imagenes/galletas-mantequilla.jpg', enlace: 'recetas.html#galletas-mantequilla' },
+                { nombre: 'Cheesecake de Frutos Rojos sin Horno', imagenSrc: 'imagenes/cheesecake.jpg', enlace: 'recetas.html#cheesecake' }
+            ];
+
+            // Uso un "bucle" para crear una tarjeta por cada postre en mi lista.
+            featuredRecipesData.forEach(data => {
+                featuredContainer.innerHTML += crearTarjetaReceta(data.nombre, data.imagenSrc, data.enlace);
+            });
+        });
+    </script>
+</body>
+</html>
